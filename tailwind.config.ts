@@ -8,9 +8,36 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom-green': '0px -1px 29.1px 0px rgba(28, 248, 0, 0.25)', // Adjusted RGBA for #1CF80040
+        'custom-black': '0px 6px 14.1px 6px rgba(0, 0, 0, 0.25)',
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        green: {
+          default: "#1CF800"
+        },
+        warning: {
+          default: "#8A4200",
+          light: "#F8C100"
+        },
+        gray: {
+          default: "#202329",
+          light: "#989898",
+          dark: "#121418",
+          dark2: "#343843",
+          1: "#F9FAFB",
+          2: "#F3F4F6",
+          3: "#E5E7EB",
+          4: "#D1D5DB",
+          5: "#9CA3AF",
+          6: "#6B7280",
+          7: "#374151",
+        },
       },
     },
   },
