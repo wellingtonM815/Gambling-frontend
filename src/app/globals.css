@@ -17,5 +17,52 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+  width: 240px;
+  transition: width .5s ease-in-out;
+  height: 100vh !important;
+
+}
+
+.hide-nav {
+  width: auto;
+}
+.nav-item-hide{
+  display: none !important;
+}
+.sidebar__footer,
+.nav-item .nav-item__text {
+  display: none;
+}
+
+.main-container {
+  height: calc(100vh - 80px) !important;
+  overflow-y: auto;
+}
+/* For WebKit browsers */
+.main-container::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+.main-container::-webkit-scrollbar-thumb {
+  background-color: #343843; /* Color of the scrollbar thumb */
+}
+.main-container::-webkit-scrollbar-track {
+  background: black; /* Color of the scrollbar track */
+}
+.sidebar-menu{
+  height: calc(100vh - 165px) !important;
+  overflow-y: auto;
+}
+/* For WebKit browsers */
+.sidebar-menu::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background-color: #343843; /* Color of the scrollbar thumb */
+}
+.sidebar-menu::-webkit-scrollbar-track {
+  background: black; /* Color of the scrollbar track */
 }

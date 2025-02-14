@@ -1,101 +1,225 @@
 import Image from "next/image";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGamepad, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
 export default function Home() {
+  const products = [
+    {
+        name: "Apple MacBook Pro 17\"",
+        color: "Silver",
+        category: "Laptop",
+        price: "$2999"
+    },
+    {
+        name: "Microsoft Surface Pro",
+        color: "White",
+        category: "Laptop PC",
+        price: "$1999"
+    },
+    {
+        name: "Magic Mouse 2",
+        color: "Black",
+        category: "Accessories",
+        price: "$99"
+    }
+];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="max-w-[1280px] mx-auto flex flex-col flex-col p-3">
+      <div className="flex flex-col w-full">
+        <div className="grid grid-cols-3 gap-5 py-[16px]">
+          <Image 
+              src="/assets/image/slider.webp" 
+              alt="Logo Icon" 
+              width={415} // Set the desired width
+              height={233} // Set the desired height
+              className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+          />
+          <Image 
+              src="/assets/image/slider.webp" 
+              alt="Logo Icon" 
+              width={415} // Set the desired width
+              height={233} // Set the desired height
+              className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+          />
+          <Image 
+              src="/assets/image/slider.webp" 
+              alt="Logo Icon" 
+              width={415} // Set the desired width
+              height={233} // Set the desired height
+              
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="flex justify-between space-x-2">
+          <div className="flex rounded-lg bg-gray-default p-[6px] w-full justify-between space-x-1">
+            <button className="flex bg-gray-dark2 items-center space-x-2 justify-center text-gray-light w-full  py-[5px] rounded-lg hover:bg-green-default transition duration-200">
+              <FontAwesomeIcon 
+                icon={faHome} 
+                className="w-4 flex pb-1" 
+              />
+              <p className="font-[500] text-[14px]">Lobby</p>
+            </button>
+            <button className="flex items-center space-x-2 justify-center text-gray-light  w-full py-[5px] rounded-lg hover:bg-green-default transition duration-200">
+              <FontAwesomeIcon 
+                icon={faHome} 
+                className="w-4 flex pb-1"  
+              />
+              <p className="font-[500] text-[14px]">Originals</p>
+            </button>
+            <button className="flex items-center space-x-2 justify-center text-gray-light  py-[5px]  w-full  rounded-lg hover:bg-green-default transition duration-200">
+              <FontAwesomeIcon 
+                icon={faHome} 
+                className="w-4 flex pb-1" 
+              />
+              <p className="font-[500] text-[14px]">Slots</p>
+            </button>
+            <button className="flex items-center space-x-2 justify-center text-gray-light  py-[5px] w-full  rounded-lg hover:bg-green-default transition duration-200">
+              <FontAwesomeIcon 
+                icon={faHome} 
+                className="w-4 flex pb-1" 
+              />
+              <p className="font-[500] text-[14px]">Live Casino</p>
+            </button>
+            <button className="flex items-center space-x-2 justify-center text-gray-light  py-[5px]  w-full rounded-lg hover:bg-green-default transition duration-200">
+              <FontAwesomeIcon 
+                icon={faHome} 
+                className="w-4 flex pb-1" 
+              />
+              <p className="font-[500] text-[14px]">Table Games</p>
+            </button>
+          </div>
+          <div className="flex items-center rounded-lg bg-gray-default w-full p-3">
+            <FontAwesomeIcon icon={faSearch} className="text-white mr-4 w-4" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="bg-transparent outline-none flex-1 text-gray-700"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col py-6">
+          <div>
+            <div className="flex pb-5">
+              <FontAwesomeIcon icon={faGamepad} className="text-white mr-3 w-6" />
+              <p className="text-[22px] text-white font-bold">Originals</p>
+            </div>
+            <div className="grid grid-cols-8 gap-5">
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/tile.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/card.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/tile.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+              <Image 
+                src="/assets/image/tile.png" 
+                alt="Logo Icon" 
+                width={145} // Set the desired width
+                height={217} // Set the desired height
+                className="transform transition-transform duration-300 hover:-translate-y-2  cursor-pointer rounded-lg"
+              />
+
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-5">
+          <div className="flex justify-between">
+            <div className="flex rounded-lg bg-gray-default p-[6px] w-2/6 justify-between space-x-1">
+              <button className="flex bg-gray-dark2 items-center space-x-2 justify-center text-gray-light w-full  py-[5px] rounded-lg hover:bg-green-default transition duration-200">
+                <p className="font-[500] text-[14px]">Lobby</p>
+              </button>
+              <button className="flex items-center space-x-2 justify-center text-gray-light  w-full py-[5px] rounded-lg hover:bg-green-default transition duration-200">
+                <p className="font-[500] text-[14px]">Originals</p>
+              </button>
+              <button className="flex items-center space-x-2 justify-center text-gray-light  py-[5px]  w-full  rounded-lg hover:bg-green-default transition duration-200">
+                <p className="font-[500] text-[14px]">Slots</p>
+              </button>
+              <button className="flex items-center space-x-2 justify-center text-gray-light  py-[5px] w-full  rounded-lg hover:bg-green-default transition duration-200">
+                <p className="font-[500] text-[14px]">Live Casino</p>
+              </button>              
+            </div>
+          </div>
+          <div className="relative overflow-x-auto">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+                <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
+                    <tr className=" border-b dark:border-gray-700 border-gray-200">
+                        <th scope="col" className="px-6 py-3">Product name</th>
+                        <th scope="col" className="px-6 py-3">Color</th>
+                        <th scope="col" className="px-6 py-3">Category</th>
+                        <th scope="col" className="px-6 py-3">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {products.map((product, index) => (
+                        <tr key={index} className=" even:bg-gray-50 even:dark:bg-gray-dark">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {product.name}
+                            </th>
+                            <td className="px-6 py-4">{product.color}</td>
+                            <td className="px-6 py-4">{product.category}</td>
+                            <td className="px-6 py-4">{product.price}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+          </div>
+        </div>
+        
+      </div>
     </div>
   );
 }
